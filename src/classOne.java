@@ -15,5 +15,15 @@ public class classOne {
         System.out.println("a - b = " + (a - b));
         System.out.println("a * b = " + (a * b));
         System.out.println("a / b = " + (a / b));
+        // Khai báo biến name kiểu chuỗi các ký tự và gán giá trị cho name = "Codelearn"
+
+        String name = "Codelearn";
+        int dob = 2019;
+        System.out.println("Name: " + name);
+        System.out.println("Date of birth: " + dob);
+
+        int a1 = 384847522;
+        int b1 = 988347273;
+        System.out.println((long) a1 * b1);
     }
 }
