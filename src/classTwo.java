@@ -51,5 +51,25 @@ public class classTwo {
 		b = c;
 		System.out.println("after swapping, a = " + a + ", b = " + b);
         * */
+
+        /*Lớp Scanner không cung cấp phương thức để nhập dữ liệu cho biến kiểu char,
+         thay vào đó bạn phải nhập dữ liệu cho kiểu String và lấy ra ký tự đầu tiên trong String đó. Ví dụ:
+         public class Input {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		char c = sc.next().charAt(0);
+		System.out.println("c = " + c);
+	}
+}
+nhập a và b kiểm tra a với b nếu a>b true sai false
+public class Input {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		System.out.println(a > b);
+	}
+}
+*/
     }
 }
