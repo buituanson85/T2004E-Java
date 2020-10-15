@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class classThree {
+public class classIf {
     // chẵn lẻ
     public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);

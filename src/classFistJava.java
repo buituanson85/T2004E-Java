@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class classTwo {
+public class classFistJava {
     public static void main(String[] args) {
         // Tạo ra đối tượng sc thuộc lớp Scanner để nhập dữ liệu
         Scanner sc = new Scanner(System.in);
