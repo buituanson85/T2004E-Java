@@ -98,4 +98,25 @@ public class classThree {
 //    }
 //}
 
+//Viết chương trình nhập từ bàn phím 3 số nguyên a, b, c.
+// Sau đó hãy kiểm tra xem a, b, c có tạo thành một dãy số tăng dần hoặc giảm dần hay không.
+
+//nhập x,y kiểm tra tọa độ ở góc phần tư thứ mấy
+
+//public class SelectionStatements {
+//
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int x = scanner.nextInt();
+//        int y = scanner.nextInt();
+//        if ( x > 0 && y > 0 ) System.out.println("This point lies in the First quadrant");
+//        else if (x < 0 && y > 0) System.out.println("This point lies in the Second quadrant");
+//        else if (x < 0 && y < 0) System.out.println("This point lies in the Third quadrant");
+//        else if (x > 0 && y < 0) System.out.println("This point lies in the Fourth quadrant");
+//        else System.out.println("x, y must not equal to 0");
+//    }
+//}
+
+
+
 
