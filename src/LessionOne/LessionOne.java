@@ -19,5 +19,8 @@ public class LessionOne {
         boolean ownVehicle = false;
         empNumber = 101;
         salary = 6789.50f;
+        System.out.println("empNumber " + empNumber);
+        System.out.println("salary "+ salary);
+
     }
 }
