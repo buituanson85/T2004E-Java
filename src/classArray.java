@@ -225,3 +225,12 @@ import java.util.Scanner;
 //    }
 //}
 
+public class classArray {
+    public static void main(String[] args) {
+        String s = "Codelearn";
+        for(char c:s.toCharArray()) {
+            System.out.println(c);
+        }
+    }
+}
+
