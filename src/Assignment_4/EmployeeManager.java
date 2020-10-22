@@ -39,6 +39,22 @@ public class EmployeeManager {
                     break;
                 case 3:
                     System.out.println("Sửa thông tin nhân viên");
+                    String names = sc.nextLine();
+                    boolean search = false;
+                        for (int i = 0; i < employee.length; i++) {
+                           if (names == employee[i].getName()){
+                               System.out.println("Mời bạn nhập địa chỉ thay đổi");
+                               sc.nextLine();
+                               String adresss = sc.nextLine();
+                               employee1.setAddress(adresss);
+                               employee1.showInfo();
+                               search = true;
+                               break;
+                           }
+                        }
+                        if (search == false){
+                            System.out.println("No staff found");
+                        }
                     break;
                 case 4:
                     System.out.println("Exit!!");
