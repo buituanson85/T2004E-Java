@@ -25,6 +25,7 @@ public class MainClass {
                     Employee employee = new Employee();
                     employee.inputInfo();
                     employees[counter++] = employee;
+
                     break;
                 case 2:
                     for (int i =0 ; i < counter ; i++){

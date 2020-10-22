@@ -1,11 +1,14 @@
 package Assignment6;
 
+import Assignment_4.Employee;
+
 import java.util.Scanner;
 
 public class StudentManager {
     public static void main(String[] args) {
         Scanner sc =new Scanner(System.in);
         int choice = 0;
+        int n;
         Student[] sinhviens = new Student[255];
         int counter = 0;
         do {
@@ -21,9 +24,14 @@ public class StudentManager {
 
             switch (choice){
                 case 1:
+                    System.out.println("Nhập vào số lượng nhân viên cần thêm: ");
+                    n = sc.nextInt();
                     Student sinhvien = new Student();
-                    sinhvien.InputInfo();
-                    sinhviens[counter++] = sinhvien;
+                    for (int i = 0 ; i < n ; i++){
+                        System.out.println("=== Nhập thông tin nhân viên thứ : " + (i+1) + " ===");
+                        sinhvien.InputInfo();
+                        sinhviens[counter++] = sinhvien;
+                    }
                     break;
                 case 2:
                     System.out.printf("%-20s %-20s \n", "fullName", "phone");
