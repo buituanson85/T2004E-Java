@@ -9,8 +9,7 @@ public class TestMethod {
     }
 
     public int add2(int n1, int n2){
-        int tong = n1 + n2;
-        return tong;
+        return n1 + n2;
     }
 
     public void setNumber(int n1){

@@ -1,7 +1,7 @@
 package lab4;
 
 public class OneDimension {
-    int marks [];
+    int[] marks;
     public void storeMarks(){
         marks =new int[4];
         System.out.println("Storing marks. please wait...");
@@ -14,8 +14,8 @@ public class OneDimension {
     public void display(){
         System.out.println(marks[0]);
 
-        for (int i = 0; i< marks.length ; i++){
-            System.out.println(marks[i]);
+        for (int mark : marks) {
+            System.out.println(mark);
         }
     }
 
