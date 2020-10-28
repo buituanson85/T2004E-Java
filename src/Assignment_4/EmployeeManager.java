@@ -7,7 +7,7 @@ public class EmployeeManager {
         Employee employee1 = new Employee();
         Scanner sc = new Scanner(System.in);
         int choise,n;
-        Employee employee[] = null;
+        Employee[] employee = null;
 
         do {
             showMenu();

@@ -1,24 +1,22 @@
-package Assignment6;
+package com.qlsv.thongtinsinhvien;
+
+import Assignment7.Student;
 
 import java.util.Scanner;
 
-public class Student {
+public class SinhVien {
     private String fullName;
     private int age;
     private String address;
     private int yearBird;
     private String sex;
-    private int phone;
+    private String phone;
     private String facebook;
 
-    //Tạo constructor không có đối số
-
-    public Student() {
+    public SinhVien() {
     }
 
-    //Tạo constructor có đối số
-
-    public Student(String fullName, int age, String address, int yearBird, String sex, int phone, String facebook) {
+    public SinhVien(String fullName, int age, String address, int yearBird, String sex, String phone, String facebook) {
         this.fullName = fullName;
         this.age = age;
         this.address = address;
@@ -28,41 +26,35 @@ public class Student {
         this.facebook = facebook;
     }
 
-    public void InputInfo(){
+    public  void Nhap(){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the student's name: ");
-        fullName = sc.nextLine();
+        this.fullName = sc.nextLine();
 
-        System.out.println("Enter the student's age: ");
-        age = sc.nextInt();
-
-        sc.nextLine();
         System.out.println("Enter your student's address: ");
-        address = sc.nextLine();
+        this.address = sc.nextLine();
 
-        System.out.println("Enter the student year: ");
-        yearBird = sc.nextInt();
-
-        sc.nextLine();
         System.out.println("Enter student gender: ");
-        sex = sc.nextLine();
+        this.sex = sc.nextLine();
 
         System.out.println("Enter the student's phone number: ");
-        phone = sc.nextInt();
+        this.phone = sc.nextLine();
 
-        sc.nextLine();
         System.out.println("Enter the student facebook link: ");
-        facebook = sc.nextLine();
+        this.facebook = sc.nextLine();
+
+        System.out.println("Enter the student year: ");
+        this.yearBird = sc.nextInt();
+
+        System.out.println("Enter the student's age: ");
+        this.age = sc.nextInt();
     }
 
-    public void ShowInfo(){
-        System.out.printf("%-20s %-20d \n", fullName, phone);
+    public void hienthi(){
+        System.out.printf("Ten: %s, Dia chi: %s,SDT: %s,Gioi Tinh: %s, fb: %s,nam sinh: %d, tuoi: %d.%n", this.fullName,this.address,
+                this.phone,this.sex,this.facebook,this.yearBird,this.age);
     }
-    public void ShowInfoYear(){
-        System.out.printf("%-20s %-20d \n", fullName, yearBird);
-    }
-    //Tạo set get
 
     public String getFullName() {
         return fullName;
@@ -104,11 +96,11 @@ public class Student {
         this.sex = sex;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -119,4 +111,6 @@ public class Student {
     public void setFacebook(String facebook) {
         this.facebook = facebook;
     }
+
+
 }

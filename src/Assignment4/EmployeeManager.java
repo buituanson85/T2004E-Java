@@ -1,7 +1,5 @@
 package Assignment4;
 
-import QuanLySinhVien.SinhVien;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -53,17 +51,17 @@ public class EmployeeManager {
         System.out.println("Enter the employee id to correct");
         int id = sc.nextInt();
         boolean search = false;
-        for (int i = 0; i < arr.size(); i++){
-            if (id == arr.get(i).getId()){
+        for (Employee employee : arr) {
+            if (id == employee.getId()) {
                 System.out.println("Enter a new address");
                 sc.nextLine();
                 String adresss = sc.nextLine();
-                arr.get(i).setAddress(adresss);
+                employee.setAddress(adresss);
                 search = true;
                 break;
             }
         }
-        if (search == false){
+        if (!search){
             System.out.println("No staff found");
         }
     }
@@ -87,15 +85,11 @@ public class EmployeeManager {
         Scanner sc = new Scanner(System.in);
         choice = sc.nextInt(); //nhập lựa chọn
 
-        switch (choice){
-            case 1: AddEmployee();
-                break;
-            case 2: ShowEmployee();
-                break;
-            case 3: EditEmployee();
-                break;
-            case 0: Exit();
-                break;
+        switch (choice) {
+            case 1 -> AddEmployee();
+            case 2 -> ShowEmployee();
+            case 3 -> EditEmployee();
+            case 0 -> Exit();
         }
     }
     //Hàm main

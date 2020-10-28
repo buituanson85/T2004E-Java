@@ -1,6 +1,4 @@
-package Assignment6;
-
-import java.util.Scanner;
+package Assignment7;
 
 public class Student {
     private String fullName;
@@ -28,40 +26,9 @@ public class Student {
         this.facebook = facebook;
     }
 
-    public void InputInfo(){
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter the student's name: ");
-        fullName = sc.nextLine();
-
-        System.out.println("Enter the student's age: ");
-        age = sc.nextInt();
-
-        sc.nextLine();
-        System.out.println("Enter your student's address: ");
-        address = sc.nextLine();
-
-        System.out.println("Enter the student year: ");
-        yearBird = sc.nextInt();
-
-        sc.nextLine();
-        System.out.println("Enter student gender: ");
-        sex = sc.nextLine();
-
-        System.out.println("Enter the student's phone number: ");
-        phone = sc.nextInt();
-
-        sc.nextLine();
-        System.out.println("Enter the student facebook link: ");
-        facebook = sc.nextLine();
+    public Student(String fullName, int age, String address, int yearBird, String sex, String phone, String facebook) {
     }
 
-    public void ShowInfo(){
-        System.out.printf("%-20s %-20d \n", fullName, phone);
-    }
-    public void ShowInfoYear(){
-        System.out.printf("%-20s %-20d \n", fullName, yearBird);
-    }
     //Tạo set get
 
     public String getFullName() {
@@ -119,4 +86,23 @@ public class Student {
     public void setFacebook(String facebook) {
         this.facebook = facebook;
     }
+
+    //toString
+
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "fullName='" + fullName + '\'' +
+                ", age=" + age +
+                ", address='" + address + '\'' +
+                ", yearBird=" + yearBird +
+                ", sex='" + sex + '\'' +
+                ", phone=" + phone +
+                ", facebook='" + facebook + '\'' +
+                '}';
+    }
+
 }
+
+
