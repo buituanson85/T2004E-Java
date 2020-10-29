@@ -1,5 +1,9 @@
 package cat.exam;
 
-public class ICat {
+public interface ICat {
+    public final String ten = "Meo";
 
+    void nhap();
+
+    void hienthi();
 }
