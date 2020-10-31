@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class News implements INews {
 
     int[] RateList = new int[3];
-     int id = 1;
+    private static int id;
     private String title;
     private String publishDate;
     private String Author;
@@ -48,6 +48,7 @@ public class News implements INews {
     public float getAverageRate() {
         return averageRate;
     }
+
     //tạo setter (ko có AverageRate)
 
     public void setId(int id) {
@@ -85,6 +86,22 @@ public class News implements INews {
         averageRate = ((float)RateList[0] + (float)RateList[1] + (float)RateList[2])/(float)RateList.length;
     }
 
+    public void InputRate(){
+        if (this.RateList == null){
+            this.RateList = new int[3];
+        }
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Nhập các đánh giá:");
+
+        for (int i = 0; i < 3; i++) {
+            do {
+                System.out.printf("Đánh giá %d: ", i + 1);
+                this.RateList[i] = Integer.parseInt(sc.nextLine());
+            } while (!(1 <= this.RateList[i] && this.RateList[i] <= 5));
+        }
+    }
+
     public void InputNew(){
         Scanner sc = new Scanner(System.in);
 
@@ -100,12 +117,13 @@ public class News implements INews {
         System.out.print("Nhập content: ");
         content = sc.nextLine();
 
-        System.out.println("Nhập các đánh giá:");
-        for (int i = 0; i < 3; i++) {
-            do {
-                System.out.printf("Đánh giá %d: ", i + 1);
-                RateList[i] = Integer.parseInt(sc.nextLine());
-            } while (!(1 <= RateList[i] && RateList[i] <= 5));
-        }
+        InputRate();
+//        System.out.println("Nhập các đánh giá:");
+//        for (int i = 0; i < 3; i++) {
+//            do {
+//                System.out.printf("Đánh giá %d: ", i + 1);
+//                RateList[i] = Integer.parseInt(sc.nextLine());
+//            } while (!(1 <= RateList[i] && RateList[i] <= 5));
+//        }
     }
 }

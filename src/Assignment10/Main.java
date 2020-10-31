@@ -19,28 +19,30 @@ public class Main {
         ArrayList<News> NewsList = new ArrayList<>();
         int choice;
         Scanner sc = new Scanner(System.in);
-        int id = 1;
+        int id =1;
         do {
             ShowMenu();
             while (true){
                 try {
-                    choice = sc.nextInt();
+                    choice = Integer.parseInt(sc.nextLine());
                     break;
                 }catch (InputMismatchException e){
-                    System.out.println("Nhập số nguyên");
+                    System.err.println("Nhập số nguyên");
                 }catch (Exception e){
-                    System.out.println("Nhập số nguyên");
+                    System.err.println("Nhập số nguyên");
+                }finally {
+
                 }
             }
             switch (choice){
                 case 1:
                     News news = new News();
                     news.InputNew();
-                    news.id = id++;
+//                    news.id = id++;
                     NewsList.add(news);
                     break;
                 case 2:
-                    System.out.println("Danh sách tin:");
+                    System.out.println("Danh sách tin: " + id);
                     for (int i = 0; i < NewsList.size(); i++) {
                         NewsList.get(i).Display();
                     }

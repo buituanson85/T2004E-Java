@@ -6,5 +6,4 @@ public abstract class Phone {
     abstract void updatePhone(String name, String phone);
     abstract void searchPhone(String name);
     abstract void sort();
-
 }
