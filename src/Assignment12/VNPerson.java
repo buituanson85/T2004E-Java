@@ -1,20 +1,22 @@
 package Assignment12;
 
+import java.util.ArrayList;
+
 public class VNPerson extends Person {
 
     public VNPerson() {
     }
 
     @Override
-    public void inputInfo() {
-        super.inputInfo();
+    public void inputInfo(ArrayList<Person> peopleList) {
+        super.inputInfo(peopleList);
     }
 
 
     @Override
     public void display() {
         super.display();
-        System.out.printf("%-15s %-15s", " ", " ");
+        System.out.printf("%-20s %-20s", " ", " ");
         System.out.printf("%.2f", invoice());
     }
 
@@ -40,11 +42,11 @@ public class VNPerson extends Person {
     @Override
     public void displayPay(){
         super.displayPay();
-        System.out.printf("%-15s %-15f %-15f %-15f", retrievePhoneNumber(), getWallet(), invoice(), pay());
+        System.out.printf("%-20s %-20f %-20f %-20f", retrievePhoneNumber(), getWallet(), invoice(), pay());
         if (pay() >=0){
-            System.out.printf("%-15s","Payable account");
+            System.out.printf("%-20s","Payable account");
         }else {
-            System.out.printf("%-15s", "The account does not have enough money");
+            System.out.printf("%-20s", "The account does not have enough money");
         }
     }
 }

@@ -7,8 +7,7 @@ public class StudentManager {
         Scanner sc =new Scanner(System.in);
         int choice;
         Student[] sinhviens = new Student[255];
-        Student sinhvien = new Student();
-        int counter = 0;
+        int n = 10;
         do {
             System.out.println("-------");
             System.out.println("1.Add new students");
@@ -23,33 +22,26 @@ public class StudentManager {
             switch (choice) {
                 case 1 -> {
                     System.out.println("Enter the number of employees to add: ");
-//                    n = sc.nextInt();
-//
-//                    for (int i = 0; i < n; i++) {
-//                        System.out.println("=== Enter student information : " + (i + 1) + " ===");
-//                        assert sinhvien != null;
-                        assert sinhvien != null;
-                        sinhvien.InputInfo();
-                        sinhviens[counter++] = sinhvien;
-//                    }
+
+                    for (int i = 0; i < n; i++) {
+                        sinhviens[i] = new Student();
+                        System.out.println("=== Enter student information : " + (i + 1) + " ===");
+                        sinhviens[i].InputInfo();
+                    }
                 }
 
                 case 2 -> {
                     System.out.printf("%-20s %-20s \n", "fullName", "phone");
-                    for (int i = 0; i < counter; i++) {
-                        sinhvien = sinhviens[i];
-                        if (sinhvien != null) {
-                            sinhvien.ShowInfo();
-                        }
+                    for (int i = 0; i < n; i++) {
+                            sinhviens[i].ShowInfo();
                     }
                 }
                 case 3 -> {
                     sc.nextLine();
                     System.out.printf("%-20s %-20s \n", "fullName", "YearBird");
-                    for (int i = 0; i < counter; i++) {
-                        sinhvien = sinhviens[i];
+                    for (int i = 0; i < n; i++) {
                         if (sinhviens[i].getYearBird() < 1993) {  //kiểm tra nhập vào đúng chuỗi dấy chưa
-                            sinhvien.ShowInfoYear();
+                            sinhviens[i].ShowInfoYear();
                         }
                     }
                 }
@@ -57,10 +49,9 @@ public class StudentManager {
                     sc.nextLine();
                     System.out.printf("%-20s %-20s \n", "fullName", "YearBird");
                     String sexSearch = "Nam";
-                    for (int i = 0; i < counter; i++) {
-                        sinhvien = sinhviens[i];
+                    for (int i = 0; i < n; i++) {
                         if (sinhviens[i].getSex().equalsIgnoreCase(sexSearch) && sinhviens[i].getYearBird() <= 1995) {  //kiểm tra nhập vào đúng chuỗi dấy chưa
-                            sinhvien.ShowInfoYear();
+                            sinhviens[i].ShowInfoYear();
                         }
                     }
                 }

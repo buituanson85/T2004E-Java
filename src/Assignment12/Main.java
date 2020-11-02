@@ -5,20 +5,20 @@ import java.util.Scanner;
 
 public class Main {
     static void showMenu(){
-        System.out.println("==============Enter electricity bill payment information===============");
-        System.out.println("1.Enter information of Vietnamese customers");
-        System.out.println("2.Call and collect a series of electricity bills from customers");
-        System.out.println("0.Finish importing changes to display");
-        System.out.println("3.Exit");
+        System.out.println("==============Enter electricity bill payment information==============="); //Menu nhập hóa đơn tiền điện khách hàng
+        System.out.println("1.Enter information of Vietnamese customers"); //khách trong ngước
+        System.out.println("2.Call and collect a series of electricity bills from customers");// khách nước ngoài
+        System.out.println("0.Finish importing changes to display"); //kết thúc phần nhập chuyển sang phần hiển thị
+        System.out.println("3.Exit"); // thoát
         System.out.println("========================================================================");
     }
 
     static void showMenuPay(){
-        System.out.println("=======================Display customer information=====================");
-        System.out.println("1.In the Customer details information and the moneyization information");
-        System.out.println("2.Enter information of foreign customers");
-        System.out.println("3.Average revenue from foreign customers");
-        System.out.println("4.Back to the information entry page");
+        System.out.println("=======================Display customer information=====================");//menu hiển thị hóa đơn tiền điên khách hàng
+        System.out.println("1.In the Customer details information and the moneyization information"); //hiển thị toàn bộ hóa đơn khách hàng (trong nước + nước ngoài)
+        System.out.println("2.Enter information of foreign customers"); //hiển thị Só điện thoại sau lấy lại + số dư tk ngân hàng + số tiền điện phải đóng + số dư tk kh sau thanh toán + kiểm tra khách hàng có khả năng thanh toán hay ko
+        System.out.println("3.Average revenue from foreign customers");//trung bình doanh thu từ khách hàng nước ngoài
+        System.out.println("4.Back to the information entry page");//trở về Menu nhập Hóa đơn
         System.out.println("========================================================================");
     }
     public static void main(String[] args) {
@@ -41,13 +41,13 @@ public class Main {
             }
             switch (choice){
                 case 1:
-                    vnPerson.inputInfo();
+                    vnPerson.inputInfo(peopleList);
                     vnPerson.invoice();
                     peopleList.add(vnPerson);
                     System.out.println("You have finished importing");
                     break;
                 case 2:
-                    fgPerson.inputInfo();
+                    fgPerson.inputInfo(peopleList);
                     peopleList.add(fgPerson);
                     fgPeopleList.add(fgPerson);
                     System.out.println("You have finished importing");
@@ -66,7 +66,7 @@ public class Main {
                         switch (choicePay) {
                             case 1 -> {
                                 System.out.println("Customers save detailed and electric bill information: ");
-                                System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s",
+                                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s",
                                         "Id", "Name", "Type", "Date", "Kw", "Phone Number", "Wallet", "Nation", "NationalId", "Electric bill");
                                 System.out.println();
                                 for (Person person : peopleList) {
@@ -76,9 +76,7 @@ public class Main {
                                 }
                             }
                             case 2 -> {
-                                //hiển thị Só điện thoại sau lấy lại + số dư tk nh + số tiền điện + số dư tk sau thanh toán + kiểm tra
-
-                                System.out.printf("%-15s %-15s %-15s %-15s %-15s", "PhoneNumber", "Wallet", "Invoice", "Pay", "Result");
+                                System.out.printf("%-20s %-20s %-20s %-20s %-20s", "PhoneNumber", "Wallet", "Invoice", "Pay", "Result");
                                 System.out.println(" ");
                                 for (Person person : peopleList) {
                                     person.displayPay();
