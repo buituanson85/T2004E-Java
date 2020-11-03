@@ -1,21 +1,35 @@
-package Assignment12;
+package Assignment12new;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class Person implements IElectricity {
+    private enum TYPE{ //đối tượng khách hàng (sinh hoạt, kinh doanh, sản xuất)
+        Living, Business, Manufacturing
+    }
+
     final int price = 1500;
     final int quota = 100;
     private int id; //mã khách hàng
     private String name;
     private String date;//ngày ra hóa đơn
-    private String type;//đối tượng khách hàng (sinh hoạt, kinh doanh, sản xuất)
+    TYPE type;
     private float kw; //số lượng điện tiêu thụ
     private String phone;//phoneNumber
     private double wallet;
 
     public Person() {
+    }
+
+    public Person(int id, String name, String date, TYPE type, float kw, String phone, double wallet) {
+        this.id = id;
+        this.name = name;
+        this.date = date;
+        this.type = type;
+        this.kw = kw;
+        this.phone = phone;
+        this.wallet = wallet;
     }
 
     public int getId() {
@@ -49,11 +63,11 @@ public abstract class Person implements IElectricity {
         this.date = date;
     }
 
-    public String getType() {
+    public TYPE getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TYPE type) {
         this.type = type;
     }
 
@@ -149,7 +163,16 @@ public abstract class Person implements IElectricity {
             }
         //type: đối tượng khách hàng (sinh hoạt, kinh doanh, sản xuất)
         System.out.println("Enter the customer audience: ");
-            type = sc.nextLine();
+            System.out.println("1.Enter living");
+            System.out.println("2.Enter Business");
+            System.out.println("3.Enter Manufacturing");
+            System.out.println("Choose: ");
+            int choose = Integer.parseInt(sc.nextLine());
+        switch (choose) {
+            case 1 -> type = TYPE.Living;
+            case 2 -> type = TYPE.Business;
+            default -> type = TYPE.Manufacturing;
+        }
         // số điện tiêu thụ nhập phải >0 và không được phép nhập ký tự (nhập số)
         System.out.println("Enter the electricity consumed: ");
         while (true){
