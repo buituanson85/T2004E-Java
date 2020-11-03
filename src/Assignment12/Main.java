@@ -9,7 +9,6 @@ public class Main {
         System.out.println("1.Enter information of Vietnamese customers"); //khách trong ngước
         System.out.println("2.Call and collect a series of electricity bills from customers");// khách nước ngoài
         System.out.println("0.Finish importing changes to display"); //kết thúc phần nhập chuyển sang phần hiển thị
-        System.out.println("3.Exit"); // thoát
         System.out.println("========================================================================");
     }
 
@@ -19,11 +18,17 @@ public class Main {
         System.out.println("2.Enter information of foreign customers"); //hiển thị Só điện thoại sau lấy lại + số dư tk ngân hàng + số tiền điện phải đóng + số dư tk kh sau thanh toán + kiểm tra khách hàng có khả năng thanh toán hay ko
         System.out.println("3.Average revenue from foreign customers");//trung bình doanh thu từ khách hàng nước ngoài
         System.out.println("4.Back to the information entry page");//trở về Menu nhập Hóa đơn
+        System.out.println("0.Exit the program");  //thoát chương trình
         System.out.println("========================================================================");
     }
+
+    static void Exit(){
+        System.out.println("GoodBye");
+        System.exit(0);
+    }
+
     public static void main(String[] args) {
         ArrayList<Person> peopleList = new ArrayList<>();
-        ArrayList<FGPerson> fgPeopleList = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int choice,choicePay;
 
@@ -49,7 +54,6 @@ public class Main {
                 case 2:
                     fgPerson.inputInfo(peopleList);
                     peopleList.add(fgPerson);
-                    fgPeopleList.add(fgPerson);
                     System.out.println("You have finished importing");
                     break;
                 case 0:
@@ -88,9 +92,11 @@ public class Main {
                                 float averageRevenue;
                                 float sum = 0;
                                 int count = 0;
-                                for (FGPerson person : fgPeopleList) {
-                                    sum += person.invoice();
-                                    count++;
+                                for (Person person : peopleList) {
+                                    if (person.retrievePhoneNumber().contains("+00")) {
+                                        sum += person.invoice();
+                                        count++;
+                                    }
                                 }
                                 if (count != 0) {
                                     averageRevenue = sum / count;
@@ -100,6 +106,7 @@ public class Main {
                                 }
                             }
                             case 4 -> System.out.println("Back to the import page.");
+                            case 0 -> Exit();
                             default -> System.err.println("Choosing the wrong");
                         }
                     }while (choicePay != 4);

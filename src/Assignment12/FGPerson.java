@@ -18,7 +18,6 @@ public class FGPerson extends Person {
         this.nation = nation;
     }
 
-
     @Override
     public void inputInfo(ArrayList<Person> peopleList) {
         Scanner sc = new Scanner(System.in);
