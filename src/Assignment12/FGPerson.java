@@ -56,7 +56,7 @@ public class FGPerson extends Person {
             return "+00" + getPhone();
     }
 
-    //Hàm hiển thị Só điện thoại sau lấy lại + số dư tk nh + số tiền điện + số dư tk sau thanh toán
+    //Hàm hiển thị Só điện thoại sau lấy lại + số tiền trong tk nh + số tiền điện + số dư tk sau thanh toán
     @Override
     public void displayPay(){
         super.displayPay();
