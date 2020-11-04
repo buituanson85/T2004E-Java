@@ -2,6 +2,7 @@ package FPTAptech;
 
 public class HD {
     /*1.Create class student in stud package which used to store all details of Student Id,Name,Batch,Mathematic_mark,Physic_Mark,Chermystry_Mark
+    Tạo sinh viên lớp trong gói stud được sử dụng để lưu trữ tất cả các chi tiết về Id sinh viên, Tên, Batch, Mathematic_mark, Physic_Mark, Chermystry_Mark
             a.Define instance variables to present phone details with appropriate data type
             b.Create default constructtor to input values for the instance variables
        validate data

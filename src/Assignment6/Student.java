@@ -28,7 +28,7 @@ public class Student {
         this.facebook = facebook;
     }
 
-    public void InputInfo(){
+    public void InputInfo(Student[] sinhviens){
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the student's name: ");

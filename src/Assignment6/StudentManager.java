@@ -7,7 +7,7 @@ public class StudentManager {
         Scanner sc =new Scanner(System.in);
         int choice;
         Student[] sinhviens = new Student[255];
-        int n = 10;
+        int n = 1;
         do {
             System.out.println("-------");
             System.out.println("1.Add new students");
@@ -26,7 +26,7 @@ public class StudentManager {
                     for (int i = 0; i < n; i++) {
                         sinhviens[i] = new Student();
                         System.out.println("=== Enter student information : " + (i + 1) + " ===");
-                        sinhviens[i].InputInfo();
+                        sinhviens[i].InputInfo(sinhviens);
                     }
                 }
 

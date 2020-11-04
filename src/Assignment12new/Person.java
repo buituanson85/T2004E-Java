@@ -36,8 +36,15 @@ public abstract class Person implements IElectricity {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public boolean setId(int id) {
+
+        if (id > 0 ){
+            this.id = id;
+            return true;
+        }else {
+            System.err.println("Id is positive integer");
+            return false;
+        }
     }
 
     public String getName() {
@@ -45,8 +52,7 @@ public abstract class Person implements IElectricity {
     }
 
     public boolean setName(String name) {
-        this.name = name;
-        if (name!= null && !name.contains(" ")){
+        if (name!= null && !name.contains(" ") && !name.isEmpty()){
             this.name = name;
             return true;
         }else {
@@ -76,7 +82,7 @@ public abstract class Person implements IElectricity {
     }
 
     public boolean setKw(float kw) {
-        if (kw > 0 ){
+        if (kw > 0){
             this.kw = kw;
             return true;
         }else {
@@ -90,7 +96,7 @@ public abstract class Person implements IElectricity {
     }
 
     public boolean setPhone(String phone) {
-        if (phone.length() == 10 ){
+        if (phone.length() == 10 && !phone.contains(" ")){
             this.phone = phone;
             return true;
         }else {
@@ -116,20 +122,31 @@ public abstract class Person implements IElectricity {
 
     public void inputInfo(ArrayList<Person> peopleList){
         Scanner sc = new Scanner(System.in);
-    //validate  ko được phép nhập trùng id.,nhập số nguyên
+    //validate  ko được phép nhập trùng id.,nhập số nguyên dương
         System.out.println("Enter the customer id: ");
             while (true){
+                int _id;
                 while (true){
-                    try {
-                        id = Integer.parseInt(sc.nextLine());
+                    while (true){
+                        try {
+                            _id = Integer.parseInt(sc.nextLine());
+                            break;
+                        }catch(NumberFormatException e){
+                            System.err.println("ID must be number !!!");
+                        }
+                        catch (Exception e) {
+                            System.out.println(e.getMessage());
+                            sc = new Scanner(System.in);
+                        }
+                    }
+                    boolean check = setId(_id);
+                    if (check){
                         break;
-                    }catch (Exception e){
-                        System.err.println("Enter the integer:");
                     }
                 }
                 boolean isFind = false;
                 for (Person person : peopleList) {
-                    if (id == person.getId()) {
+                    if (_id == person.getId()) {
                         isFind = true;
                         break;
                     }
@@ -157,8 +174,12 @@ public abstract class Person implements IElectricity {
                     SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
                     sdf.parse(date);
                     break;
-                }catch (Exception e) {
+                }catch(NumberFormatException e){
+                    System.err.println(e.getMessage());
+                }
+                catch (Exception e) {
                     System.err.println("Input MM/dd/yyyy.");
+//                    sc = new Scanner(System.in);
                 }
             }
         //type: đối tượng khách hàng (sinh hoạt, kinh doanh, sản xuất)
@@ -167,7 +188,19 @@ public abstract class Person implements IElectricity {
             System.out.println("2.Enter Business");
             System.out.println("3.Enter Manufacturing");
             System.out.println("Choose: ");
-            int choose = Integer.parseInt(sc.nextLine());
+        int choose;
+        while (true){
+            try {
+                choose = Integer.parseInt(sc.nextLine());
+                break;
+            }catch(NumberFormatException e){
+                System.err.println("Choose must be number !!!");
+            }
+            catch (Exception e) {
+                System.err.println(e.getMessage());
+                sc = new Scanner(System.in);
+            }
+        }
         switch (choose) {
             case 1 -> type = TYPE.Living;
             case 2 -> type = TYPE.Business;

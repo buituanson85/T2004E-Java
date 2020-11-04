@@ -14,8 +14,24 @@ public class FGPerson extends Person {
         return nation;
     }
 
-    public void setNation(String nation) {
-        this.nation = nation;
+    public boolean setNationalId(String nationalId) {
+        if (nationalId!= null && !nationalId.contains(" ") && !nationalId.isEmpty()){
+            this.nationalId = nationalId;
+            return true;
+        }else {
+            System.err.println("You have not entered a customer nationaId");
+            return false;
+        }
+    }
+
+    public boolean setNation(String nation) {
+        if (nation!= null && !nation.contains(" ") && !nation.isEmpty()){
+            this.nation = nation;
+            return true;
+        }else {
+            System.err.println("You have not entered a customer nation");
+            return false;
+        }
     }
 
     @Override
@@ -24,10 +40,21 @@ public class FGPerson extends Person {
 
         super.inputInfo(peopleList);
         System.out.println("Enter the country name: ");
-        nation = sc.nextLine();
-
+        while (true){
+            String _nation = sc.nextLine();
+            boolean check = setNation(_nation);
+            if (check){
+                break;
+            }
+        }
         System.out.println("Enter the country code: ");
-        nationalId = sc.nextLine();
+        while (true){
+            String _nationalId = sc.nextLine();
+            boolean check = setNationalId(_nationalId);
+            if (check){
+                break;
+            }
+        }
     }
 
     @Override
