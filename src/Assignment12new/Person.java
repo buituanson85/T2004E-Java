@@ -258,8 +258,6 @@ public abstract class Person implements IElectricity {
         System.out.printf("%-20d %-20s %-20s %-20s %-20f %-20s %-20f", id, name, type, date, kw, phone, wallet);
     }
 
-    public void displayPay(){
-
-    }
+    public abstract void displayPay();
 
 }

@@ -86,7 +86,7 @@ public class FGPerson extends Person {
     //Hàm hiển thị Só điện thoại sau lấy lại + số tiền trong tk nh + số tiền điện + số dư tk sau thanh toán
     @Override
     public void displayPay(){
-        super.displayPay();
+//        super.displayPay();
         System.out.printf("%-20s %-20f %-20f %-20f", retrievePhoneNumber(), getWallet(), invoice(), pay());
         if (pay() >=0){
             System.out.printf("%-20s","Payable account");

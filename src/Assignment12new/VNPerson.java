@@ -41,7 +41,7 @@ public class VNPerson extends Person {
 
     @Override
     public void displayPay(){
-        super.displayPay();
+//        super.displayPay();
         System.out.printf("%-20s %-20f %-20f %-20f", retrievePhoneNumber(), getWallet(), invoice(), pay());
         if (pay() >=0){
             System.out.printf("%-20s","Payable account");

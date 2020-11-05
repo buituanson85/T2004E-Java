@@ -1,5 +1,7 @@
 package Assignment12new;
 
+import BaiTap_02.People;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

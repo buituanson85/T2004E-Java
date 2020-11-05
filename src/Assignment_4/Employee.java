@@ -14,18 +14,6 @@ public class Employee {
 
     }
 
-    //Constructor parameters
-
-//    public Employee(String name, String address, String phoneNumber, String yearOfBirth, String yearInToTheCompany) {
-//        this.name = name;
-//        this.address = address;
-//        this.phoneNumber = phoneNumber;
-//        this.yearOfBirth = yearOfBirth;
-//        this.yearInToTheCompany = yearInToTheCompany;
-//    }
-
-    //tạo hàm nhập thông tin nhân viên:
-
     public void inputInfo(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Mời bạn nhập tên nhân viên");
