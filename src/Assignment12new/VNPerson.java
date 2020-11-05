@@ -12,7 +12,6 @@ public class VNPerson extends Person {
         super.inputInfo(peopleList);
     }
 
-
     @Override
     public void display() {
         super.display();

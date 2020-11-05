@@ -1,6 +1,4 @@
-package Practical;
-
-import java.util.Scanner;
+package Practical_1;
 
 public class ConversionUtil {
      double fahrenheitToCelcius(double fDegree){

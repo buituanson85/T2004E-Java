@@ -2,6 +2,7 @@ package Assignment12new;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public abstract class Person implements IElectricity {
@@ -13,7 +14,7 @@ public abstract class Person implements IElectricity {
     final int quota = 100;
     private int id; //mã khách hàng
     private String name;
-    private String date;//ngày ra hóa đơn
+    private Date date;//ngày ra hóa đơn
     TYPE type;
     private float kw; //số lượng điện tiêu thụ
     private String phone;//phoneNumber
@@ -22,7 +23,7 @@ public abstract class Person implements IElectricity {
     public Person() {
     }
 
-    public Person(int id, String name, String date, TYPE type, float kw, String phone, double wallet) {
+    public Person(int id, String name, Date date, TYPE type, float kw, String phone, double wallet) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -61,11 +62,11 @@ public abstract class Person implements IElectricity {
         }
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -166,22 +167,24 @@ public abstract class Person implements IElectricity {
                     break;
                 }
             }
-        //nhập định dạng dưới dạng MM//dd//yyyy
-        System.out.println("Enter the invoice date: ");
-            while (true){
-                try {
-                    date = sc.nextLine();
-                    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-                    sdf.parse(date);
-                    break;
-                }catch(NumberFormatException e){
-                    System.err.println(e.getMessage());
-                }
-                catch (Exception e) {
-                    System.err.println("Input MM/dd/yyyy.");
-//                    sc = new Scanner(System.in);
-                }
-            }
+
+            //nhập định dạng dưới dạng MM//dd//yyyy
+            //        System.out.println("Enter the invoice date: ");
+            //            while (true){
+            //                try {
+            //                    date = sc.nextLine();
+            //                    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+            //                    sdf.parse(date);
+            //                    break;
+            //                }catch(NumberFormatException e){
+            //                    System.err.println(e.getMessage());
+            //                }
+            //                catch (Exception e) {
+            //                    System.err.println("Input MM/dd/yyyy.");
+            //                    sc = new Scanner(System.in);
+            //                }
+            //            }
+
         //type: đối tượng khách hàng (sinh hoạt, kinh doanh, sản xuất)
         System.out.println("Enter the customer audience: ");
             System.out.println("1.Enter living");
@@ -225,7 +228,7 @@ public abstract class Person implements IElectricity {
         }
         //y/c Nhập đủ 10 số.
         System.out.println("Enter your phone number: ");
-//        while (!setPhone(sc.nextLine()));
+        //        while (!setPhone(sc.nextLine()));
         while (true){
             String _phone = sc.nextLine();
             boolean check = setPhone(_phone);
@@ -251,11 +254,19 @@ public abstract class Person implements IElectricity {
                 break;
             }
         }
+
+        date = new Date();
+    }
+    //hàm tự động lấy thời gian tại thời điểm tạo hóa đơn thanh toán
+    public String getDateString(){
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        String str = format.format(date);
+        return str;
     }
 
     //Tạo hàm hiển thị
     public void display(){
-        System.out.printf("%-20d %-20s %-20s %-20s %-20f %-20s %-20f", id, name, type, date, kw, phone, wallet);
+        System.out.printf("%-20d %-20s %-20s %-20s %-20f %-20s %-20f", id, name, type, getDateString(), kw, phone, wallet);
     }
 
     public abstract void displayPay();
