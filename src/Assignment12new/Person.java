@@ -1,8 +1,8 @@
 package Assignment12new;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 public abstract class Person implements IElectricity {
@@ -121,7 +121,8 @@ public abstract class Person implements IElectricity {
     }
     //Tạo hàm nhập thông tin khách hàng.
 
-    public void inputInfo(ArrayList<Person> peopleList){
+    public void inputInfo(){
+        List<Person> peopleList = DataMrg.getInstance().getPeopleList();
         Scanner sc = new Scanner(System.in);
     //validate  ko được phép nhập trùng id.,nhập số nguyên dương
         System.out.println("Enter the customer id: ");

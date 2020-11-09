@@ -1,6 +1,5 @@
 package Assignment12new;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FGPerson extends Person {
@@ -35,10 +34,10 @@ public class FGPerson extends Person {
     }
 
     @Override
-    public void inputInfo(ArrayList<Person> peopleList) {
+    public void inputInfo() {
         Scanner sc = new Scanner(System.in);
 
-        super.inputInfo(peopleList);
+        super.inputInfo();
         System.out.println("Enter the country name: ");
         while (true){
             String _nation = sc.nextLine();

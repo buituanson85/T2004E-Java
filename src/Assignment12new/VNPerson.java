@@ -1,15 +1,13 @@
 package Assignment12new;
 
-import java.util.ArrayList;
-
 public class VNPerson extends Person {
 
     public VNPerson() {
     }
 
     @Override
-    public void inputInfo(ArrayList<Person> peopleList) {
-        super.inputInfo(peopleList);
+    public void inputInfo() {
+        super.inputInfo();
     }
 
     @Override
